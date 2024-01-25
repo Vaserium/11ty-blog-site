@@ -1,0 +1,20 @@
+<!-- Little copy-paste code template that displays all blogs and image and all the content -->>
+<li>
+  <article class="snippet">
+    <img
+      src="{{ post.data.image }}"
+      alt="{{ post.data.imageAlt }}"
+      class="snippet__image"
+    />
+    <!-- The start of grabbing all the metaData in the frontmatter of everysingle .md file to display-->
+    <h3 class="snippet__title">
+      <a href="{{ post.url }}"> {{ post.data.title }}</a>
+    </h3>
+    <p class="snippet__meta">
+      by <span>{{ post.data.author }}</span> on
+      <span>{{ post.date | postDate }}</span>
+    </p>
+    <p class="snippet__body">{{ post.data.description }}</p>
+    <a href="{{ post.url }}" class="btn btn--primary">Continue Reading</a>
+  </article>
+</li>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{ title }}</title>
+    <link rel="stylesheet" href="/style.css" />
+    <!--This title is dynamic. Meaning you can insert every page that has a different title that will automatically get inserted here-->
+  </head>
+  <blog>
+    <h1>
+      {{ title }}
+    </h1>
+    {% include 'header.njk' %}
+    <main>
+      {{ content | safe }}
+      <!--These curly braces {} is used to look at Frontmatter(MetaData)-->
+      <!-- Since we are interacting with index.njk, the content portion is here because it will display everything after the Frontmatter(3-6) into the page. Everything after the metadata is displayed-->
+    </main>
+    {% include 'footer.njk' %}
+  </blog>
+</html>

@@ -1,0 +1,20 @@
+---
+layout: "base.njk"
+---
+
+<!-- This is a template for the page that pops up if you click one of the blogs-->
+
+<article class="main-article">
+  <div class="container container--narrow flow">
+    <h1 class="article-title">
+      {{ title }}
+    </h1>
+    <figure class="main-article__figure">
+      <img src="{{ image }}" alt="{{ imageAlt }}" />
+      <figcaption>{{ imageAlt }}</figcaption>
+    </figure>
+
+    {{ content | safe }}
+    <!-- Displays all content that comes after frontmatter-->
+  </div>
+</article>

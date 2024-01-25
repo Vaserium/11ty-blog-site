@@ -7,6 +7,10 @@
     <title>{{ title }}</title>
     <link rel="stylesheet" href="/style.css" />
     <!--This title is dynamic. Meaning you can insert every page that has a different title that will automatically get inserted here-->
+    <script
+      defer
+      src="https://identity.netlify.com/v1/netlify-identity-widget.js"
+    ></script>
   </head>
   <blog>
     <h1>
@@ -19,5 +23,17 @@
       <!-- Since we are interacting with index.njk, the content portion is here because it will display everything after the Frontmatter(3-6) into the page. Everything after the metadata is displayed-->
     </main>
     {% include 'footer.njk' %}
+
+    <script>
+      if (window.netlifyIdentity) {
+        window.netlifyIdentity.on("init", (user) => {
+          if (!user) {
+            window.netlifyIdentity.on("login", () => {
+              document.location.href = "/admin/";
+            });
+          }
+        });
+      }
+    </script>
   </blog>
 </html>
